@@ -82,8 +82,8 @@ function M:peek()
         )
     elseif empty_output then
         ya.preview_widgets(self, {
-            ui.Paragraph(self.area, { ui.Line("No items") })
-                :align(ui.Paragraph.CENTER),
+            ui.Text({ ui.Line("No items") }):area(self.area)
+                :align(ui.Text.CENTER),
         })
     else
         ya.preview_widgets(self, { ui.Paragraph.parse(self.area, lines) })
